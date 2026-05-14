@@ -1,0 +1,12 @@
+# Dataset (demasiado grande para GitHub — descargar desde Kaggle)
+data/creditcard.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Entornos virtuales
+venv/
+.env
