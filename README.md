@@ -4,6 +4,13 @@
 
 ---
 
+**Integrantes:**
+- Sebastian Salazar Henao
+- Andres Felipe Velez Alvarez
+- Nathalia Valentina Cardoza Azuaje
+
+---
+
 ## Tabla de Contenidos
 
 1. [Planteamiento del Problema](#1-planteamiento-del-problema)
