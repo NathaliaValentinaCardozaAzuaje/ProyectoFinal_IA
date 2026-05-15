@@ -29,23 +29,27 @@
   },
   "dnn_config": {
     "arquitectura": [
+      512,
       256,
       128,
       64,
       32,
+      16,
       1
     ],
     "dropout": [
+      0.35,
       0.3,
       0.25,
-      0.2,
+      0.15,
       0.1,
+      0.05,
       0
     ],
     "batch_norm": true,
     "activacion": "ReLU + Sigmoid (salida)",
-    "optimizer": "AdamW (lr=1e-3, wd=1e-4)",
-    "loss": "WeightedMSE (fraud_weight=10)",
+    "optimizer": "AdamW (lr=5e-4, wd=5e-5)",
+    "loss": "WeightedMSE (fraud_weight=15)",
     "early_stop": "epoca 43",
     "batch_size": 512
   }
