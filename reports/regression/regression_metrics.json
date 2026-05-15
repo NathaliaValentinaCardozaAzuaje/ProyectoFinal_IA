@@ -1,0 +1,52 @@
+{
+  "mejor_modelo": {
+    "nombre": "Gradient Boosting",
+    "r2": 0.956717,
+    "rmse": 0.005908,
+    "mae": 0.001721
+  },
+  "todos": {
+    "Linear Regression": {
+      "r2": 0.8374,
+      "rmse": 0.0114,
+      "mae": 0.0069
+    },
+    "Random Forest": {
+      "r2": 0.9377,
+      "rmse": 0.0071,
+      "mae": 0.0033
+    },
+    "Gradient Boosting": {
+      "r2": 0.9567,
+      "rmse": 0.0059,
+      "mae": 0.0017
+    },
+    "DNN": {
+      "r2": 0.9378,
+      "rmse": 0.0071,
+      "mae": 0.0036
+    }
+  },
+  "dnn_config": {
+    "arquitectura": [
+      256,
+      128,
+      64,
+      32,
+      1
+    ],
+    "dropout": [
+      0.3,
+      0.25,
+      0.2,
+      0.1,
+      0
+    ],
+    "batch_norm": true,
+    "activacion": "ReLU + Sigmoid (salida)",
+    "optimizer": "AdamW (lr=1e-3, wd=1e-4)",
+    "loss": "WeightedMSE (fraud_weight=10)",
+    "early_stop": "epoca 43",
+    "batch_size": 512
+  }
+}
