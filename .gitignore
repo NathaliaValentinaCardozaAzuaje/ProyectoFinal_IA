@@ -1,20 +1,12 @@
-# Dataset (demasiado grande para GitHub — descargar desde Kaggle)
-data/creditcard.csv
-data/*.csv
+.env
+.env.*
 
-# Modelos grandes
-models/*.pth
-models/*.pkl
-
-# Python cache
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+
 .ipynb_checkpoints/
 
-# Entornos virtuales
+.venv/
 venv/
-.env
-
-# OS
-.DS_Store
+env/

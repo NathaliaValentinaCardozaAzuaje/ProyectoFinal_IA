@@ -33,11 +33,11 @@ ProyectoFinal_IA/
 │   ├── regression_model.pkl    # Gradient Boosting (fallback)
 │   └── scaler.pkl              # RobustScaler ajustado en train
 ├── notebooks/
-│   └── persona_C_regression_app_bot.ipynb  # Notebook principal
+│   └── regression.ipynb  # Notebook principal
 ├── reports/                    # Gráficas generadas
 ├── scripts/
 │   └── upgrade_dnn_architecture.py  # Script de actualización de arquitectura DNN
-├── persona_C_plan_trabajo.md
+├── regression_plan_trabajo.md
 └── descripcion_proyecto_final.md
 ```
 
@@ -57,7 +57,7 @@ streamlit run app/app.py
 
 ## Ejecutar el notebook
 
-Abre `notebooks/persona_C_regression_app_bot.ipynb` en Jupyter y ejecuta **Kernel → Restart & Run All**.
+Abre `notebooks/regression.ipynb` en Jupyter y ejecuta **Kernel → Restart & Run All**.
 
 ---
 
@@ -82,3 +82,25 @@ Input(11) → Dense(512) → BN → ReLU → Dropout(0.35)
 | Scheduler | ReduceLROnPlateau (patience=8) |
 | Early Stopping | patience=20, delta=1e-7 |
 | Inicialización | He (kaiming_normal_) |
+
+---
+
+## Chatbot con API (opcional y restringido al proyecto)
+
+El chatbot ahora puede funcionar en modo hibrido:
+- `Local (reglas)` si no hay API key.
+- `API gemini + contexto del proyecto` si defines `GEMINI_API_KEY`.
+
+Variables de entorno:
+
+```bash
+GEMINI_API_KEY=tu_api_key
+CHATBOT_USE_API=auto        # auto | true | false
+CHATBOT_PROVIDER=gemini
+CHATBOT_MODEL=gemini-1.5-flash
+GEMINI_BASE_URL=https://generativelanguage.googleapis.com/v1beta
+CHATBOT_TIMEOUT_SEC=20
+```
+
+El prompt del bot obliga a responder solo con contexto interno del proyecto y, si no encuentra informacion, indica que no tiene ese dato.
+La app carga automaticamente estas variables desde `.env` al iniciar.
